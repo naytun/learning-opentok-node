@@ -67,7 +67,7 @@ router.get('/room/:name', function (req, res) {
   }
   // if this is the first time the room is being accessed, create a new session ID
   else {
-    opentok.createSession({ mediaMode: 'routed' }, function (err, session) {
+    opentok.createSession({ mediaMode: 'relayed' }, function (err, session) {
       if (err) {
         console.log(err);
         res.status(500).send({ error: 'createSession error:' + err });
